@@ -140,8 +140,8 @@ export const PILLARS: Pillar[] = [
   {
     index: "03",
     title: "Trade",
-    description: "Business Consulting · Business Administration · Import / Export",
-    services: ["Business Consulting", "Business Administration", "Import / Export"],
+    description: "Business Consulting & Administration · Import / Export",
+    services: ["Business Consulting & Administration", "Import / Export"],
   },
   {
     index: "04",
@@ -160,7 +160,7 @@ export const DIGITAL_NOTE = "Also: Digital — web, brand and growth systems →
 
 export const CAPABILITY_STRIP_ITEMS: CapabilityStripItem[] = [
   { label: "Four Practices", description: "Capital · Mobility · Trade · Assets" },
-  { label: "Seven Services", description: "Advisory through execution" },
+  { label: "Nine Services", description: "Advisory through execution" },
   { label: "Cross-Border", description: "India-outbound structuring" },
   { label: "Single Point", description: "One firm, end to end" },
 ];
