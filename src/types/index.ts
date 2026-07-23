@@ -31,6 +31,7 @@ export interface Pillar {
   index: string;
   title: string;
   description: string;
+  services: string[];
 }
 
 export interface JurisdictionMarker {
@@ -39,25 +40,9 @@ export interface JurisdictionMarker {
   y: number;
 }
 
-export interface ProofMetric {
-  value: number;
-  suffix: string;
+export interface CapabilityStripItem {
   label: string;
-}
-
-export interface CaseStudyMetric {
-  value: string;
-  label: string;
-}
-
-export interface CaseStudy {
-  eyebrow: string;
-  numeral: string;
-  title: string;
-  summary: string;
-  metrics: CaseStudyMetric[];
-  ctaLabel: string;
-  ctaHref: string;
+  description: string;
 }
 
 export interface InsightItem {

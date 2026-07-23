@@ -1,5 +1,5 @@
 import type {
-  CaseStudy,
+  CapabilityStripItem,
   CtaLink,
   FooterColumn,
   InsightItem,
@@ -7,7 +7,6 @@ import type {
   NavLink,
   OrganizationJsonLd,
   Pillar,
-  ProofMetric,
   SocialLink,
 } from "@/types";
 
@@ -19,6 +18,8 @@ export const SITE = {
     "Rise360 Enterprises helps Indian businesses and high-net-worth individuals establish legally, financially and operationally in international markets.",
   url: "https://rise360enterprises.com",
 } as const;
+
+export const LEGAL_ENTITY_NAME = "RISE 360 ENTERPRISES";
 
 export const NAV_LINKS: NavLink[] = [
   { label: "Capabilities", href: "/#capabilities" },
@@ -85,15 +86,14 @@ export const SOCIAL_LINKS: SocialLink[] = [
 ];
 
 export const FOOTER_LEGAL = {
-  copyright: "© 2026 Rise360 Enterprises. All rights reserved.",
-  registration:
-    "Rise360 Enterprises Private Limited · Registered in India · CIN pending allotment",
+  copyright: `© 2026 ${LEGAL_ENTITY_NAME}. All rights reserved.`,
+  registration: `${LEGAL_ENTITY_NAME} Private Limited · Registered in India · CIN pending allotment`,
 } as const;
 
 export const ORGANIZATION_JSON_LD: OrganizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: SITE.name,
+  name: LEGAL_ENTITY_NAME,
   url: SITE.url,
   description: SITE.description,
   sameAs: SOCIAL_LINKS.map((social) => social.href),
@@ -128,48 +128,42 @@ export const PILLARS: Pillar[] = [
   {
     index: "01",
     title: "Capital",
-    description: "Finance, forex, digital assets and investment structuring",
+    description: "Finance & Forex · Crypto / Digital Assets",
+    services: ["Finance & Forex", "Crypto / Digital Assets"],
   },
   {
     index: "02",
     title: "Mobility",
-    description: "Immigration, residency and long-term global positioning",
+    description: "Immigration Services",
+    services: ["Immigration Services"],
   },
   {
     index: "03",
     title: "Trade",
-    description: "Import, export, operations and business administration",
+    description: "Business Consulting · Business Administration · Import / Export",
+    services: ["Business Consulting", "Business Administration", "Import / Export"],
   },
   {
     index: "04",
     title: "Assets",
-    description: "Luxury and commercial real estate across key markets",
+    description: "Luxury & Real Estate",
+    services: ["Luxury & Real Estate"],
   },
 ];
 
+export const DIGITAL_PRACTICE = {
+  title: "Digital",
+  services: ["Website & App Development", "Graphic Design", "Digital Marketing"],
+} as const;
+
 export const DIGITAL_NOTE = "Also: Digital — web, brand and growth systems →";
 
-export const PROOF_METRICS: ProofMetric[] = [
-  { value: 12, suffix: "", label: "Jurisdictions" },
-  { value: 40, suffix: "+", label: "Mandates" },
-  { value: 8, suffix: "", label: "Years" },
-  { value: 9, suffix: "", label: "Practices" },
+export const CAPABILITY_STRIP_ITEMS: CapabilityStripItem[] = [
+  { label: "Four Practices", description: "Capital · Mobility · Trade · Assets" },
+  { label: "Seven Services", description: "Advisory through execution" },
+  { label: "Cross-Border", description: "India-outbound structuring" },
+  { label: "Single Point", description: "One firm, end to end" },
 ];
-
-export const CASE_STUDY: CaseStudy = {
-  eyebrow: "Selected Mandate",
-  numeral: "01",
-  title: "Moving a Bengaluru manufacturer into three markets at once",
-  summary:
-    "A mid-sized industrial manufacturer needed US, UK and UAE entities live before a single funding close. We sequenced entity formation, banking and residency in parallel rather than in series, so every structure was operational before the deal closed.",
-  metrics: [
-    { value: "3", label: "Markets" },
-    { value: "90", label: "Days to operational" },
-    { value: "1", label: "Funding close" },
-  ],
-  ctaLabel: "Read the mandate",
-  ctaHref: "#",
-};
 
 export const JURISDICTIONS_CONTENT = {
   eyebrow: "Global Reach",

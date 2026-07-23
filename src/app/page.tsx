@@ -1,11 +1,10 @@
-import { CaseStudy } from "@/components/home/CaseStudy";
+import { CapabilityStrip } from "@/components/home/CapabilityStrip";
 import { ConsultationCTA } from "@/components/home/ConsultationCTA";
 import { Hero } from "@/components/home/Hero";
 import { InsightTeaser } from "@/components/home/InsightTeaser";
 import { Jurisdictions } from "@/components/home/Jurisdictions";
 import { Mandate } from "@/components/home/Mandate";
 import { Pillars } from "@/components/home/Pillars";
-import { ProofStrip } from "@/components/home/ProofStrip";
 
 export default function Home() {
   return (
@@ -13,8 +12,7 @@ export default function Home() {
       <Hero />
       <Mandate />
       <Pillars />
-      <ProofStrip />
-      <CaseStudy />
+      <CapabilityStrip />
       <Jurisdictions />
       <InsightTeaser />
       <ConsultationCTA />
