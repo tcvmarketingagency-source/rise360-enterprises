@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import {
   AnimatePresence,
@@ -16,6 +17,8 @@ import { Container } from "@/components/ui/Container";
 import { A11Y_LABELS, HEADER_CONTENT, NAV_LINKS } from "@/lib/content";
 
 export function Header() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const shouldReduceMotion = useReducedMotion();
@@ -24,6 +27,8 @@ export function Header() {
   useMotionValueEvent(scrollY, "change", (latest) => {
     setScrolled(latest > 80);
   });
+
+  const showSolidChrome = !isHome || scrolled;
 
   useEffect(() => {
     if (!mobileOpen) return;
@@ -46,7 +51,7 @@ export function Header() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 border-b transition-colors duration-200",
-        scrolled
+        showSolidChrome
           ? "border-hairline bg-paper/80 backdrop-blur-md"
           : "border-transparent bg-transparent",
       )}

@@ -50,3 +50,38 @@ export interface InsightItem {
   title: string;
   readTime: string;
 }
+
+export interface PracticeService {
+  name: string;
+  description: string;
+}
+
+export interface PracticeProcessStep {
+  step: string;
+  title: string;
+  description: string;
+}
+
+export interface PracticeFaq {
+  question: string;
+  answer: string;
+}
+
+export interface PracticeSeo {
+  title: string;
+  description: string;
+}
+
+export interface Practice {
+  slug: string;
+  name: string;
+  eyebrow: string;
+  mandate: string;
+  heroSupport: string;
+  definition: string;
+  services: PracticeService[];
+  process: PracticeProcessStep[];
+  markets: string[];
+  faqs: PracticeFaq[];
+  seo: PracticeSeo;
+}
