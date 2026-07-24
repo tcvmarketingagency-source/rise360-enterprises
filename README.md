@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rise360 Enterprises
 
-## Getting Started
+Marketing and content site for Rise360 Enterprises — cross-border structuring across
+Capital, Mobility, Trade, Assets and Digital for Indian businesses and principals
+expanding internationally.
 
-First, run the development server:
+Built with Next.js 16 (App Router, Turbopack), TypeScript, Tailwind CSS v4, Framer
+Motion and Lenis smooth scroll. Long-form content (Insights) is authored as MDX with
+frontmatter and parsed at build time — no CMS, no runtime `fs` access.
+
+## Prerequisites
+
+- Node.js **20.9 or later**
+- npm (ships with Node)
+
+## Setup
+
+```bash
+git clone https://github.com/tcvmarketingagency-source/rise360-enterprises.git
+cd rise360-enterprises
+npm install
+```
+
+Copy any environment variables you need into `.env.local` (none are required for a
+local build — the site has no external API dependencies).
+
+## Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Opens the app at [http://localhost:3000](http://localhost:3000) with hot reload.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Other scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command         | Purpose                                                |
+| ---------------- | ------------------------------------------------------ |
+| `npm run build`  | Production build (Turbopack), prerenders all static routes |
+| `npm run start`  | Serve the production build locally                     |
+| `npm run lint`   | Run ESLint                                              |
 
-## Learn More
+Before opening a PR, run all three checks:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npx tsc --noEmit
+npx eslint src
+npm run build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+content/insights/        MDX articles (frontmatter + body) — read at build time only
+src/app/                 Routes (App Router): /, /capabilities/[slug], /insights,
+                         /insights/[slug], /about, /privacy, /terms, /disclosures,
+                         sitemap.ts, robots.ts
+src/components/          UI grouped by area: ui/, layout/, home/, practice/,
+                         insights/, about/, legal/
+src/lib/content.ts       All site copy and structured content (nav, footer, practices,
+                         hero copy, SEO metadata per page)
+src/lib/insights.ts      getAllArticles / getArticleBySlug / getArticlesByPractice
+src/types/index.ts       Shared TypeScript types (Practice, Article, etc.)
+```
 
-## Deploy on Vercel
+## Adding an Insights article
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Add a new `.mdx` file to `content/insights/` with this frontmatter:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```yaml
+---
+title: "Article Title"
+slug: "article-title-slug"
+excerpt: "One or two sentences shown in article listings."
+publishedAt: "2026-08-01" # ISO date, not in the future
+updatedAt: "2026-08-15" # optional
+practice: "capital" # capital | mobility | trade | assets | digital
+markets: ["UAE", "Singapore"]
+seo:
+  title: "SEO title"
+  description: "SEO description"
+---
+```
+
+Followed by the article body in Markdown/MDX. `readingTime` is computed automatically
+— do not add it to the frontmatter. The article is picked up automatically by
+`getAllArticles()`, appears in `/insights`, gets its own static route at
+`/insights/[slug]`, and is added to `sitemap.ts` on the next build. No code changes
+are needed.
+
+## Configuration notes
+
+- Site-wide constants (name, tagline, canonical URL) live in `SITE` in
+  `src/lib/content.ts` — update `SITE.url` if the production domain changes, since
+  `metadataBase` and canonical URLs derive from it.
+- The legal pages (`/privacy`, `/terms`, `/disclosures`) are drafted boilerplate and
+  have **not** been reviewed by qualified legal counsel — have them reviewed before
+  relying on them in production.
+
+## Deployment
+
+The app is a standard Next.js App Router project and deploys to any Next.js-compatible
+host (e.g. Vercel) with no additional configuration.
