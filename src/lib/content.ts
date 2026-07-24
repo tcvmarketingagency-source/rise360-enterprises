@@ -47,8 +47,8 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
     title: "Company",
     links: [
       { label: "About Rise360", href: "/about" },
-      { label: "Leadership", href: "/about" },
-      { label: "Careers", href: "/#careers" },
+      { label: "Leadership", href: "/about#leadership" },
+      { label: "Careers", href: "/about#careers" },
     ],
   },
   {
@@ -599,6 +599,79 @@ export const INSIGHTS_PAGE_CONTENT = {
     description:
       "Practical analysis on jurisdiction choice, cross-border structure, residency by investment and trade compliance from Rise360 Enterprises.",
   },
+} as const;
+
+export const ABOUT_CONTENT = {
+  eyebrow: "About",
+  heading: "One firm, accountable for the whole structure — not just its own piece of it.",
+  heroSupport:
+    "Rise360 exists because cross-border expansion is usually handled by five disconnected advisors who never see each other's work. We built one firm that sees all of it.",
+  mandate:
+    "Most Indian businesses expanding internationally end up coordinating their own advisors — a banker here, an immigration consultant there, a real estate broker somewhere else — and discovering the gaps between them only when something breaks. Rise360's mandate is to be the single accountable point across Capital, Mobility, Trade, Assets and Digital, so the structure is designed as one thing from the start, not stitched together after the fact.",
+  seo: {
+    title: "About Rise360 — Cross-Border Structuring, One Accountable Firm",
+    description:
+      "Rise360 Enterprises is a single accountable firm structuring Capital, Mobility, Trade, Assets and Digital for Indian businesses expanding internationally.",
+  },
+} as const;
+
+export const LEADERSHIP_CONTENT = {
+  eyebrow: "Leadership",
+  heading: "Led by specialists in each discipline, accountable for the outcomes they run.",
+  body: "Rise360 is organized around the practice, not a flat hierarchy. Each discipline is led by people who work in it daily and answer directly for what it delivers.",
+} as const;
+
+export const LEADERSHIP_AREAS: { title: string; description: string }[] = [
+  {
+    title: "Capital",
+    description: "Led by specialists in multi-currency banking, treasury and digital-asset structuring.",
+  },
+  {
+    title: "Mobility",
+    description: "Led by specialists in cross-border immigration and residency strategy.",
+  },
+  {
+    title: "Trade",
+    description: "Led by specialists in trade compliance, customs and operating-model design.",
+  },
+  {
+    title: "Assets",
+    description: "Led by specialists in international real estate and asset-holding structures.",
+  },
+  {
+    title: "Digital",
+    description: "Led by specialists in brand, web and growth systems for market entry.",
+  },
+];
+
+export const CAREERS_CONTENT = {
+  eyebrow: "Careers",
+  heading: "No open roles right now.",
+  body: "Rise360 doesn't keep a standing careers page open for its own sake. When a practice needs a specialist, we'll list it here. If you work in cross-border banking, immigration law, trade compliance, real estate or digital, and want to be in the loop first, write to us directly.",
+  ctaLabel: "careers@rise360enterprises.com",
+  ctaHref: "mailto:careers@rise360enterprises.com",
+} as const;
+
+export const LEGAL_CONTACT_EMAIL = "hello@rise360enterprises.com";
+
+export const LEGAL_LAST_UPDATED = "July 24, 2026";
+
+export const PRIVACY_SEO = {
+  title: "Privacy Policy",
+  description:
+    "How Rise360 Enterprises collects, uses and protects information from clients and site visitors.",
+} as const;
+
+export const TERMS_SEO = {
+  title: "Terms of Engagement",
+  description:
+    "The general terms governing engagements with Rise360 Enterprises across Capital, Mobility, Trade, Assets and Digital.",
+} as const;
+
+export const DISCLOSURES_SEO = {
+  title: "Disclosures",
+  description:
+    "Regulatory status, licensing scope and third-party partner disclosures for Rise360 Enterprises.",
 } as const;
 
 export const CONSULTATION_CONTENT: {
