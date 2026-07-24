@@ -45,12 +45,6 @@ export interface CapabilityStripItem {
   description: string;
 }
 
-export interface InsightItem {
-  category: string;
-  title: string;
-  readTime: string;
-}
-
 export interface PracticeService {
   name: string;
   description: string;
@@ -84,4 +78,24 @@ export interface Practice {
   markets: string[];
   faqs: PracticeFaq[];
   seo: PracticeSeo;
+}
+
+export type PracticeSlug = "capital" | "mobility" | "trade" | "assets" | "digital";
+
+export interface ArticleSeo {
+  title: string;
+  description: string;
+}
+
+export interface Article {
+  title: string;
+  slug: string;
+  excerpt: string;
+  publishedAt: string;
+  updatedAt?: string;
+  practice: PracticeSlug;
+  markets: string[];
+  readingTime: string;
+  seo: ArticleSeo;
+  content: string;
 }

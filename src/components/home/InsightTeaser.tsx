@@ -3,9 +3,17 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
-import { INSIGHTS, INSIGHTS_CONTENT } from "@/lib/content";
+import { INSIGHTS_CONTENT, PRACTICES } from "@/lib/content";
+import { getAllArticles } from "@/lib/insights";
+import { formatDate } from "@/lib/utils";
 
 export function InsightTeaser() {
+  const [latest] = getAllArticles();
+
+  if (!latest) {
+    return null;
+  }
+
   return (
     <Section id="insights" className="bg-paper-soft">
       <Container>
@@ -16,21 +24,25 @@ export function InsightTeaser() {
           </h2>
         </Reveal>
 
-        <div className="mt-16 grid grid-cols-1 gap-10 md:grid-cols-3">
-          {INSIGHTS.map((insight, index) => (
-            <Reveal key={insight.title} delay={index * 0.06}>
-              <Link href="/#insights" className="group block border-t border-hairline pt-8">
-                <span className="font-ui text-caption uppercase text-brass">
-                  {insight.category}
-                </span>
-                <h3 className="mt-4 font-display text-heading text-ink transition-colors duration-200 group-hover:text-brass-dim">
-                  {insight.title}
-                </h3>
-                <span className="mt-4 block font-ui text-sm text-slate">{insight.readTime}</span>
-              </Link>
-            </Reveal>
-          ))}
-        </div>
+        <Reveal delay={0.06} className="mt-16">
+          <Link
+            href={`/insights/${latest.slug}`}
+            className="group block border-t border-hairline pt-8"
+          >
+            <span className="font-ui text-caption uppercase text-brass">
+              {PRACTICES[latest.practice].name}
+            </span>
+            <h3 className="mt-4 font-display text-heading text-ink transition-colors duration-200 group-hover:text-brass-dim">
+              {latest.title}
+            </h3>
+            <p className="mt-4 max-w-2xl text-body text-slate">{latest.excerpt}</p>
+            <div className="mt-4 flex items-center gap-3 font-ui text-sm text-slate">
+              <span>{formatDate(latest.publishedAt)}</span>
+              <span aria-hidden="true">·</span>
+              <span>{latest.readingTime}</span>
+            </div>
+          </Link>
+        </Reveal>
       </Container>
     </Section>
   );

@@ -21,9 +21,20 @@ export async function generateMetadata({
     return {};
   }
 
+  const url = `/capabilities/${practice.slug}`;
+
   return {
     title: practice.seo.title,
     description: practice.seo.description,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title: practice.seo.title,
+      description: practice.seo.description,
+      url,
+      type: "website",
+    },
   };
 }
 

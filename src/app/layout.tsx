@@ -28,6 +28,9 @@ export const metadata: Metadata = {
     template: "%s | Rise360 Enterprises",
   },
   description: SITE.description,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: SITE.name,
     description: SITE.description,

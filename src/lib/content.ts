@@ -2,7 +2,6 @@ import type {
   CapabilityStripItem,
   CtaLink,
   FooterColumn,
-  InsightItem,
   JurisdictionMarker,
   NavLink,
   OrganizationJsonLd,
@@ -25,7 +24,7 @@ export const LEGAL_ENTITY_NAME = "RISE 360 ENTERPRISES";
 export const NAV_LINKS: NavLink[] = [
   { label: "Capabilities", href: "/#capabilities" },
   { label: "Global", href: "/#global" },
-  { label: "Insights", href: "/#insights" },
+  { label: "Insights", href: "/insights" },
   { label: "About", href: "/about" },
 ];
 
@@ -591,23 +590,16 @@ export const INSIGHTS_CONTENT = {
   heading: "Perspective from inside the structuring work.",
 } as const;
 
-export const INSIGHTS: InsightItem[] = [
-  {
-    category: "Tax",
-    title: "What Indian founders miss when structuring a US holding company",
-    readTime: "6 min read",
+export const INSIGHTS_PAGE_CONTENT = {
+  eyebrow: "Insights",
+  heading: "Perspective from inside the structuring work.",
+  body: "Practical analysis on jurisdiction choice, cross-border structure, residency and trade compliance — written for the decisions our clients are actually making.",
+  seo: {
+    title: "Insights — Cross-Border Structuring Analysis",
+    description:
+      "Practical analysis on jurisdiction choice, cross-border structure, residency by investment and trade compliance from Rise360 Enterprises.",
   },
-  {
-    category: "Immigration",
-    title: "Sequencing residency applications around a funding round",
-    readTime: "5 min read",
-  },
-  {
-    category: "Banking",
-    title: "Why institutional banking relationships take longer to build than entities",
-    readTime: "7 min read",
-  },
-];
+} as const;
 
 export const CONSULTATION_CONTENT: {
   heading: string;
