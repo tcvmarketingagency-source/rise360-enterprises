@@ -1,3 +1,4 @@
+import { AccentText } from "@/components/ui/AccentText";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Hairline } from "@/components/ui/Hairline";
@@ -11,7 +12,9 @@ export function PracticeHero({ practice }: { practice: Practice }) {
       <Container>
         <Reveal>
           <Eyebrow>{practice.eyebrow}</Eyebrow>
-          <h1 className="mt-6 max-w-3xl font-display text-display-lg">{practice.mandate}</h1>
+          <h1 className="mt-6 max-w-3xl font-display text-display-lg">
+            <AccentText text={practice.mandate} accent={practice.mandateAccent} />
+          </h1>
           <p className="mt-6 max-w-xl text-body text-paper/70">{practice.heroSupport}</p>
         </Reveal>
       </Container>

@@ -71,6 +71,7 @@ export interface Practice {
   name: string;
   eyebrow: string;
   mandate: string;
+  mandateAccent?: string;
   heroSupport: string;
   definition: string;
   services: PracticeService[];

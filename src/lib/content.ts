@@ -164,6 +164,7 @@ export const PRACTICES: Record<string, Practice> = {
     name: "Capital",
     eyebrow: "Capital",
     mandate: "Capital that moves as freely as the business it funds.",
+    mandateAccent: "freely",
     heroSupport:
       "Banking, forex and digital asset structuring built for money that crosses borders as often as your business does.",
     definition:
@@ -245,6 +246,7 @@ export const PRACTICES: Record<string, Practice> = {
     name: "Mobility",
     eyebrow: "Mobility",
     mandate: "Mobility structured to match your business timeline, not the immigration office's.",
+    mandateAccent: "your business timeline",
     heroSupport:
       "Investor, founder and family immigration pathways sequenced alongside your corporate structure — not after it.",
     definition:
@@ -321,6 +323,7 @@ export const PRACTICES: Record<string, Practice> = {
     name: "Trade",
     eyebrow: "Trade",
     mandate: "Trade infrastructure built to move goods, not just paperwork.",
+    mandateAccent: "goods",
     heroSupport:
       "Business consulting, administration and import/export structuring for companies operating across two or more markets at once.",
     definition:
@@ -407,6 +410,7 @@ export const PRACTICES: Record<string, Practice> = {
     name: "Assets",
     eyebrow: "Assets",
     mandate: "Property and assets structured to outlast a single transaction.",
+    mandateAccent: "outlast",
     heroSupport:
       "Structuring guidance for acquiring, holding and eventually transferring luxury and commercial real estate across the markets you operate in.",
     definition:
@@ -483,6 +487,7 @@ export const PRACTICES: Record<string, Practice> = {
     name: "Digital",
     eyebrow: "Digital",
     mandate: "Digital presence built for the market you're entering, not the one you left.",
+    mandateAccent: "you're entering",
     heroSupport:
       "Website, brand and growth systems built for businesses presenting themselves in a new international market.",
     definition:

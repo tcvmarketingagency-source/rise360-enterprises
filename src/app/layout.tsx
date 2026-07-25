@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { MotionProvider } from "@/components/layout/MotionProvider";
@@ -7,17 +7,17 @@ import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { ORGANIZATION_JSON_LD, SITE } from "@/lib/content";
 import "./globals.css";
 
-const fraunces = Fraunces({
+const cormorantGaramond = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["400", "600"],
-  variable: "--font-fraunces",
+  weight: ["500", "600"],
+  variable: "--font-cormorant",
   display: "swap",
 });
 
-const inter = Inter({
+const dmSans = DM_Sans({
   subsets: ["latin"],
   weight: ["400", "500"],
-  variable: "--font-inter",
+  variable: "--font-dm-sans",
   display: "swap",
 });
 
@@ -51,7 +51,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${inter.variable} h-full`}>
+    <html lang="en" className={`${cormorantGaramond.variable} ${dmSans.variable} h-full`}>
       <body className="flex min-h-full flex-col bg-paper font-ui text-ink antialiased">
         <script
           type="application/ld+json"

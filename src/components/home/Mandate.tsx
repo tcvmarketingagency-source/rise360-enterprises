@@ -1,3 +1,4 @@
+import { AccentText } from "@/components/ui/AccentText";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
@@ -11,7 +12,7 @@ export function Mandate() {
         <Reveal>
           <Eyebrow>{MANDATE_CONTENT.eyebrow}</Eyebrow>
           <p className="mt-6 max-w-4xl font-display text-display-lg leading-[1.3] text-ink">
-            {MANDATE_CONTENT.statement}
+            <AccentText text={MANDATE_CONTENT.statement} accent="hold their position there" />
           </p>
         </Reveal>
       </Container>

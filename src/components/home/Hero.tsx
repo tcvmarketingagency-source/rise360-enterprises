@@ -1,3 +1,4 @@
+import { AccentText } from "@/components/ui/AccentText";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -19,7 +20,7 @@ export function Hero() {
         <Reveal>
           <Eyebrow>{HERO_CONTENT.eyebrow}</Eyebrow>
           <h1 className="mt-6 max-w-3xl font-display text-display-xl text-ink">
-            {HERO_CONTENT.headline}
+            <AccentText text={HERO_CONTENT.headline} accent="structure" />
           </h1>
           <p className="mt-8 max-w-xl text-body text-slate">{HERO_CONTENT.body}</p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">

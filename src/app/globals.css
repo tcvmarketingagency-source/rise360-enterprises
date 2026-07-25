@@ -4,12 +4,12 @@
 :root {
   --ink: #0a0b0d;
   --ink-soft: #14161a;
-  --paper: #f7f5f2;
-  --paper-soft: #edeae5;
-  --brass: #9a7b4f;
-  --brass-dim: #6e5838;
-  --slate: #6b7280;
-  --hairline: rgba(154, 123, 79, 0.18);
+  --paper: #faf9f7;
+  --paper-soft: #f0ede7;
+  --brass: #b8975a;
+  --brass-dim: #8a6e3e;
+  --slate: #6b6b6b;
+  --hairline: rgba(184, 151, 90, 0.18);
 }
 
 @theme inline {
@@ -24,17 +24,19 @@
   --color-hairline: var(--hairline);
 
   /* Typeface families */
-  --font-display: var(--font-fraunces);
-  --font-ui: var(--font-inter);
+  --font-display: var(--font-cormorant);
+  --font-ui: var(--font-dm-sans);
 
   /* Fluid type scale */
   --text-display-xl: clamp(2.75rem, 6vw, 5.5rem);
   --text-display-xl--line-height: 1.02;
-  --text-display-xl--letter-spacing: -0.03em;
+  --text-display-xl--letter-spacing: -0.035em;
+  --text-display-xl--font-weight: 600;
 
   --text-display-lg: clamp(2rem, 4vw, 3.5rem);
   --text-display-lg--line-height: 1.08;
-  --text-display-lg--letter-spacing: -0.02em;
+  --text-display-lg--letter-spacing: -0.025em;
+  --text-display-lg--font-weight: 600;
 
   --text-heading: clamp(1.375rem, 2vw, 1.75rem);
   --text-heading--line-height: 1.25;
