@@ -3,6 +3,7 @@ import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { MotionProvider } from "@/components/layout/MotionProvider";
+import { PreloaderProvider } from "@/components/layout/PreloaderProvider";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { ORGANIZATION_JSON_LD, SITE } from "@/lib/content";
 import "./globals.css";
@@ -60,10 +61,12 @@ export default function RootLayout({
           }}
         />
         <MotionProvider>
-          <SmoothScroll />
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
+          <PreloaderProvider>
+            <SmoothScroll />
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </PreloaderProvider>
         </MotionProvider>
       </body>
     </html>
