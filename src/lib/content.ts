@@ -31,7 +31,7 @@ export const NAV_LINKS: NavLink[] = [
 export const HEADER_CONTENT = {
   wordmark: "RISE360",
   ctaLabel: "Private Consultation",
-  ctaHref: "/#consultation",
+  ctaHref: "/consultation",
 } as const;
 
 export const A11Y_LABELS = {
@@ -109,7 +109,7 @@ export const HERO_CONTENT: {
   eyebrow: "Cross-Border Infrastructure",
   headline: SITE.tagline,
   body: "Rise360 designs the legal, financial and operational foundation for Indian enterprises and principals expanding beyond India — structured for scrutiny, built for scale.",
-  primaryCta: { label: "Private Consultation", href: "/#consultation" },
+  primaryCta: { label: "Private Consultation", href: "/consultation" },
   secondaryCta: { label: "Explore Capabilities", href: "/#capabilities" },
 };
 
@@ -682,15 +682,55 @@ export const DISCLOSURES_SEO = {
 export const CONSULTATION_CONTENT: {
   heading: string;
   body: string;
-  ctaLabel: string;
-  ctaHref: string;
 } = {
   heading: "You cross the border. We build what carries you across it.",
   body: "A private consultation begins with your structure, not our services.",
-  ctaLabel: "Private Consultation",
-  ctaHref: "mailto:hello@rise360enterprises.com",
 };
 
 export function getPracticeCtaBody(practiceName: string): string {
   return `A ${practiceName} consultation begins with your structure, not our services.`;
 }
+
+export const CONSULTATION_PAGE_CONTENT = {
+  eyebrow: "Private Consultation",
+  heading: "A private consultation begins with your structure, not our services.",
+  body: "Five short steps, one decision at a time. Review everything before you submit.",
+  seo: {
+    title: "Private Consultation — Rise360 Enterprises",
+    description:
+      "Begin a private consultation with Rise360 across Capital, Mobility, Trade, Assets and Digital — structured around your objective, markets and timeline.",
+  },
+} as const;
+
+export const CONSULTATION_OBJECTIVES: { value: string; label: string; description: string }[] = [
+  { value: "expand", label: "Expand", description: "Establish operations in a new market." },
+  {
+    value: "relocate",
+    label: "Relocate",
+    description: "Residency or mobility for you or your family.",
+  },
+  { value: "invest", label: "Invest", description: "Deploy capital across borders." },
+  {
+    value: "structure",
+    label: "Structure",
+    description: "Organize an existing cross-border setup.",
+  },
+];
+
+export const CONSULTATION_HORIZONS: { value: string; label: string }[] = [
+  { value: "immediate", label: "Immediate" },
+  { value: "near", label: "Within 12 months" },
+  { value: "exploratory", label: "Exploratory" },
+];
+
+export const CONSULTATION_SCALES: { value: string; label: string }[] = [
+  { value: "under-1m", label: "Under $1M" },
+  { value: "1m-5m", label: "$1M – $5M" },
+  { value: "5m-25m", label: "$5M – $25M" },
+  { value: "25m-plus", label: "$25M+" },
+];
+
+export const CONSULTATION_SUCCESS_CONTENT = {
+  heading: "Your consultation request is received.",
+  body: "We respond to every enquiry within one business day. All communication is confidential.",
+} as const;

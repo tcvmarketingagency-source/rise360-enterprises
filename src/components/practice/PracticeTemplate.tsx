@@ -17,7 +17,7 @@ export function PracticeTemplate({ practice }: { practice: Practice }) {
       <PracticeProcess practice={practice} />
       <PracticeMarkets practice={practice} />
       <PracticeFaq practice={practice} />
-      <ConsultationCTA body={getPracticeCtaBody(practice.name)} />
+      <ConsultationCTA body={getPracticeCtaBody(practice.name)} practiceSlug={practice.slug} />
     </>
   );
 }

@@ -7,9 +7,12 @@ import { CONSULTATION_CONTENT } from "@/lib/content";
 interface ConsultationCTAProps {
   heading?: string;
   body?: string;
+  practiceSlug?: string;
 }
 
-export function ConsultationCTA({ heading, body }: ConsultationCTAProps = {}) {
+export function ConsultationCTA({ heading, body, practiceSlug }: ConsultationCTAProps = {}) {
+  const href = practiceSlug ? `/consultation?practice=${practiceSlug}` : "/consultation";
+
   return (
     <Section id="consultation" className="bg-ink text-paper">
       <Container>
@@ -20,8 +23,8 @@ export function ConsultationCTA({ heading, body }: ConsultationCTAProps = {}) {
           <p className="max-w-md text-body text-paper/70">
             {body ?? CONSULTATION_CONTENT.body}
           </p>
-          <Button href={CONSULTATION_CONTENT.ctaHref} variant="primary">
-            {CONSULTATION_CONTENT.ctaLabel}
+          <Button href={href} variant="primary">
+            Private Consultation
           </Button>
         </Reveal>
       </Container>
