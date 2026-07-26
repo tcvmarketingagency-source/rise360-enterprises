@@ -5,6 +5,7 @@ import { getAllArticles } from "@/lib/insights";
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: SITE.url, changeFrequency: "monthly", priority: 1 },
+    { url: `${SITE.url}/services`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${SITE.url}/about`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${SITE.url}/insights`, changeFrequency: "weekly", priority: 0.8 },
     ...Object.keys(PRACTICES).map((slug) => ({
