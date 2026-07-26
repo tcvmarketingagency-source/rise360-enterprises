@@ -97,3 +97,23 @@
     scroll-behavior: auto !important;
   }
 }
+
+.service-motif :is(line, circle, rect, polyline, path) {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .group:hover .service-motif :is(line, circle, rect, polyline, path) {
+    animation: service-motif-draw 400ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+@keyframes service-motif-draw {
+  from {
+    stroke-dashoffset: 100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}

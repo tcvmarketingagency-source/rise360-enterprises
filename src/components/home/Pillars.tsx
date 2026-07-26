@@ -1,9 +1,8 @@
-import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
-import { DIGITAL_NOTE, PILLARS, PILLARS_CONTENT } from "@/lib/content";
+import { PILLARS, PILLARS_CONTENT } from "@/lib/content";
 
 export function Pillars() {
   return (
@@ -16,31 +15,16 @@ export function Pillars() {
           </h2>
         </Reveal>
 
-        <div className="mt-16 border-t border-hairline">
-          {PILLARS.map((pillar, index) => (
-            <Reveal key={pillar.title} delay={index * 0.06}>
-              <div className="group flex items-center justify-between gap-6 border-b border-hairline py-8 transition-colors duration-200 hover:bg-ink-soft">
-                <div className="flex items-baseline gap-6 md:gap-10">
-                  <span className="font-display text-sm text-brass">{pillar.index}</span>
-                  <div>
-                    <h3 className="font-display text-display-lg text-ink transition-colors duration-200 group-hover:text-paper">
-                      {pillar.title}
-                    </h3>
-                    <p className="mt-2 text-body text-slate transition-colors duration-200 group-hover:text-paper/70">
-                      {pillar.description}
-                    </p>
-                  </div>
-                </div>
-                <ArrowRight
-                  aria-hidden="true"
-                  className="h-5 w-5 shrink-0 text-ink transition-[transform,color] duration-200 group-hover:translate-x-1.5 group-hover:text-paper"
-                />
+        <Reveal delay={0.06}>
+          <div className="mt-12 flex flex-wrap items-baseline gap-x-10 gap-y-4 border-t border-hairline pt-8">
+            {PILLARS.map((pillar) => (
+              <div key={pillar.title} className="flex items-baseline gap-3">
+                <span className="font-display text-sm text-brass">{pillar.index}</span>
+                <span className="font-display text-heading text-ink">{pillar.title}</span>
               </div>
-            </Reveal>
-          ))}
-        </div>
-
-        <p className="mt-8 font-ui text-sm text-slate">{DIGITAL_NOTE}</p>
+            ))}
+          </div>
+        </Reveal>
       </Container>
     </Section>
   );

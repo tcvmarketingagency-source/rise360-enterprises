@@ -83,6 +83,26 @@ export interface Practice {
 
 export type PracticeSlug = "capital" | "mobility" | "trade" | "assets" | "digital";
 
+export type ServiceMotifId =
+  | "consultant"
+  | "immigration"
+  | "finance"
+  | "admin"
+  | "tradeflow"
+  | "web"
+  | "design"
+  | "marketing"
+  | "assets";
+
+export interface ServiceCard {
+  index: string;
+  motif: ServiceMotifId;
+  name: string;
+  description: string;
+  detail: string;
+  href: string;
+}
+
 export interface ArticleSeo {
   title: string;
   description: string;

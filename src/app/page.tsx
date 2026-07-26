@@ -5,6 +5,7 @@ import { InsightTeaser } from "@/components/home/InsightTeaser";
 import { Jurisdictions } from "@/components/home/Jurisdictions";
 import { Mandate } from "@/components/home/Mandate";
 import { Pillars } from "@/components/home/Pillars";
+import { ServicesShowcase } from "@/components/home/ServicesShowcase";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Hero />
       <Mandate />
       <Pillars />
+      <ServicesShowcase />
       <CapabilityStrip />
       <Jurisdictions />
       <InsightTeaser />

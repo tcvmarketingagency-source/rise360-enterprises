@@ -7,6 +7,7 @@ import type {
   OrganizationJsonLd,
   Pillar,
   Practice,
+  ServiceCard,
   SocialLink,
 } from "@/types";
 
@@ -23,6 +24,7 @@ export const LEGAL_ENTITY_NAME = "RISE 360 ENTERPRISES";
 
 export const NAV_LINKS: NavLink[] = [
   { label: "Capabilities", href: "/#capabilities" },
+  { label: "Services", href: "/services" },
   { label: "Global", href: "/#global" },
   { label: "Insights", href: "/insights" },
   { label: "About", href: "/about" },
@@ -121,7 +123,7 @@ export const MANDATE_CONTENT = {
 
 export const PILLARS_CONTENT = {
   eyebrow: "Capabilities",
-  heading: "Every discipline a cross-border structure requires, under one accountable roof.",
+  heading: "Four practices. Nine disciplines. One accountable structure.",
 } as const;
 
 export const PILLARS: Pillar[] = [
@@ -150,13 +152,6 @@ export const PILLARS: Pillar[] = [
     services: ["Luxury & Real Estate"],
   },
 ];
-
-export const DIGITAL_PRACTICE = {
-  title: "Digital",
-  services: ["Website & App Development", "Graphic Design", "Digital Marketing"],
-} as const;
-
-export const DIGITAL_NOTE = "Also: Digital — web, brand and growth systems →";
 
 export const PRACTICES: Record<string, Practice> = {
   capital: {
@@ -567,6 +562,116 @@ export const PRACTICES: Record<string, Practice> = {
     },
   },
 };
+
+export const SERVICES_CONTENT = {
+  eyebrow: "Services",
+  heading: "Nine disciplines, each built to hold up on its own and lock into the whole.",
+} as const;
+
+export const SERVICES_PAGE_CONTENT = {
+  eyebrow: "Services",
+  heading: "Nine disciplines, structured as one accountable practice.",
+  headingAccent: "one accountable practice",
+  body: "Every service below sits inside Capital, Mobility, Trade or Assets, and is delivered by specialists who work in it daily — not generalists spread thin across all nine.",
+  seo: {
+    title: "Services — Nine Cross-Border Disciplines",
+    description:
+      "Rise360's nine services — consulting, immigration, finance, trade, real estate and digital — structured across Capital, Mobility, Trade and Assets for Indian businesses expanding internationally.",
+  },
+} as const;
+
+export const SERVICES: ServiceCard[] = [
+  {
+    index: "01",
+    motif: "consultant",
+    name: "Business Consulting",
+    description:
+      "Strategic and operational advisory for entering or scaling in a new market — market entry, competitive positioning and operating model design.",
+    detail:
+      "Engaged early, before a jurisdiction is chosen, so the structure that follows fits the market you're actually entering.",
+    href: "/capabilities/trade",
+  },
+  {
+    index: "02",
+    motif: "immigration",
+    name: "Immigration Services",
+    description:
+      "Investor, founder, employment and family visa pathways structured around your corporate timeline — sequenced so residency isn't the last piece to fall into place.",
+    detail:
+      "Coordinated through licensed immigration counsel in the destination jurisdiction and managed end to end on your behalf.",
+    href: "/capabilities/mobility",
+  },
+  {
+    index: "03",
+    motif: "finance",
+    name: "Finance, Forex & Crypto",
+    description:
+      "Multi-currency banking, forex exposure management and digital-asset structuring for capital that moves across two or more jurisdictions.",
+    detail:
+      "Covers treasury architecture and compliance for holding digital assets across markets with materially different regulatory treatment.",
+    href: "/capabilities/capital",
+  },
+  {
+    index: "04",
+    motif: "admin",
+    name: "Business Administration",
+    description:
+      "Day-to-day back-office administration — compliance filings, corporate secretarial work and operational coordination once you're live in a jurisdiction.",
+    detail:
+      "The ongoing function that keeps a new entity in good standing after the initial structuring work is done.",
+    href: "/capabilities/trade",
+  },
+  {
+    index: "05",
+    motif: "tradeflow",
+    name: "Import / Export",
+    description:
+      "Customs, tariff classification and logistics structuring for goods moving between India and your international markets.",
+    detail:
+      "Structured alongside a licensed customs broker or freight forwarder in each jurisdiction you trade through.",
+    href: "/capabilities/trade",
+  },
+  {
+    index: "06",
+    motif: "web",
+    name: "Website & App Development",
+    description:
+      "Design and development of websites and applications built for the market you're entering, not a template repurposed from your home market.",
+    detail:
+      "Scoped around how customers in that market actually discover, evaluate and transact with businesses like yours.",
+    href: "/capabilities/digital",
+  },
+  {
+    index: "07",
+    motif: "design",
+    name: "Graphic Design",
+    description:
+      "Brand identity and visual design adapted for how your business needs to present itself to a new market's customers and partners.",
+    detail:
+      "Covers the full identity system — mark, type, colour and application — not a single logo delivered in isolation.",
+    href: "/capabilities/digital",
+  },
+  {
+    index: "08",
+    motif: "marketing",
+    name: "Digital Marketing",
+    description:
+      "Search, social and paid marketing systems built around how customers in your target market actually discover and evaluate businesses like yours.",
+    detail:
+      "Set up as an ongoing growth function, measured against the market's own channels and buying behaviour.",
+    href: "/capabilities/digital",
+  },
+  {
+    index: "09",
+    motif: "assets",
+    name: "Luxury & Real Estate",
+    description:
+      "Acquisition structuring, holding-entity design and exit planning for luxury and commercial real estate across your international markets.",
+    detail:
+      "Ownership structure is decided before you close, so tax exposure and succession are answered in advance, not after.",
+    href: "/capabilities/assets",
+  },
+];
 
 export const CAPABILITY_STRIP_ITEMS: CapabilityStripItem[] = [
   { label: "Four Practices", description: "Capital · Mobility · Trade · Assets" },
