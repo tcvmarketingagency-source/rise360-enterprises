@@ -1,5 +1,6 @@
 import type {
   CapabilityStripItem,
+  ContactInfo,
   CtaLink,
   FooterColumn,
   JurisdictionMarker,
@@ -8,7 +9,6 @@ import type {
   Pillar,
   Practice,
   ServiceCard,
-  SocialLink,
 } from "@/types";
 
 export const SITE = {
@@ -21,6 +21,19 @@ export const SITE = {
 } as const;
 
 export const LEGAL_ENTITY_NAME = "RISE 360 ENTERPRISES";
+
+export const CONTACT: ContactInfo = {
+  phone: { label: "+91 78980 76757", href: "tel:+917898076757" },
+  whatsapp: { label: "+91 91097 57936", href: "https://wa.me/919109757936" },
+  email: {
+    label: "Rise360.enterprises@gmail.com",
+    href: "mailto:Rise360.enterprises@gmail.com",
+  },
+} as const;
+
+export function getWhatsAppLink(message: string): string {
+  return `${CONTACT.whatsapp.href}?text=${encodeURIComponent(message)}`;
+}
 
 export const NAV_LINKS: NavLink[] = [
   { label: "Capabilities", href: "/#capabilities" },
@@ -73,18 +86,10 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
     title: "Legal",
     links: [
       { label: "Privacy Policy", href: "/privacy" },
-      { label: "Terms of Engagement", href: "/terms" },
-      { label: "Disclosures", href: "/disclosures" },
+      { label: "Terms of Service", href: "/terms" },
+      { label: "Disclaimer", href: "/disclaimer" },
     ],
   },
-];
-
-export const SOCIAL_LINKS: SocialLink[] = [
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/company/rise360enterprises",
-  },
-  { label: "X", href: "https://x.com/rise360hq" },
 ];
 
 export const FOOTER_LEGAL = {
@@ -98,7 +103,14 @@ export const ORGANIZATION_JSON_LD: OrganizationJsonLd = {
   name: LEGAL_ENTITY_NAME,
   url: SITE.url,
   description: SITE.description,
-  sameAs: SOCIAL_LINKS.map((social) => social.href),
+  telephone: CONTACT.phone.label,
+  email: CONTACT.email.label,
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: CONTACT.phone.label,
+    email: CONTACT.email.label,
+    contactType: "customer service",
+  },
 };
 
 export const HERO_CONTENT: {
@@ -758,13 +770,13 @@ export const CAREERS_CONTENT = {
   eyebrow: "Careers",
   heading: "No open roles right now.",
   body: "Rise360 doesn't keep a standing careers page open for its own sake. When a practice needs a specialist, we'll list it here. If you work in cross-border banking, immigration law, trade compliance, real estate or digital, and want to be in the loop first, write to us directly.",
-  ctaLabel: "careers@rise360enterprises.com",
-  ctaHref: "mailto:careers@rise360enterprises.com",
+  ctaLabel: CONTACT.email.label,
+  ctaHref: CONTACT.email.href,
 } as const;
 
-export const LEGAL_CONTACT_EMAIL = "hello@rise360enterprises.com";
+export const LEGAL_CONTACT_EMAIL = CONTACT.email.label;
 
-export const LEGAL_LAST_UPDATED = "July 24, 2026";
+export const LEGAL_LAST_UPDATED = "July 27, 2026";
 
 export const PRIVACY_SEO = {
   title: "Privacy Policy",
@@ -773,15 +785,15 @@ export const PRIVACY_SEO = {
 } as const;
 
 export const TERMS_SEO = {
-  title: "Terms of Engagement",
+  title: "Terms of Service",
   description:
-    "The general terms governing engagements with Rise360 Enterprises across Capital, Mobility, Trade, Assets and Digital.",
+    "The general terms governing use of this site and engagements with Rise360 Enterprises across Capital, Mobility, Trade, Assets and Digital.",
 } as const;
 
-export const DISCLOSURES_SEO = {
-  title: "Disclosures",
+export const DISCLAIMER_SEO = {
+  title: "Disclaimer",
   description:
-    "Regulatory status, licensing scope and third-party partner disclosures for Rise360 Enterprises.",
+    "What Rise360 Enterprises is and isn't, and how licensed local partners carry out regulated work in each jurisdiction.",
 } as const;
 
 export const CONSULTATION_CONTENT: {

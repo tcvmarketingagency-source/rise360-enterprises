@@ -11,7 +11,8 @@ import {
   CONSULTATION_OBJECTIVES,
   CONSULTATION_SCALES,
   CONSULTATION_SUCCESS_CONTENT,
-  LEGAL_CONTACT_EMAIL,
+  CONTACT,
+  getWhatsAppLink,
   PRACTICES,
 } from "@/lib/content";
 import {
@@ -161,9 +162,17 @@ export function ConsultationFlow({ initialPracticeSlug }: ConsultationFlowProps)
         </h2>
         <p className="mt-4 text-body text-slate">{CONSULTATION_SUCCESS_CONTENT.body}</p>
         <p className="mt-8 font-ui text-sm text-slate">
-          Prefer email? Write to{" "}
-          <a href={`mailto:${LEGAL_CONTACT_EMAIL}`} className="text-brass hover:underline">
-            {LEGAL_CONTACT_EMAIL}
+          <a
+            href={getWhatsAppLink("Hi Rise360, following up on my consultation request.")}
+            target="_blank"
+            rel="noreferrer"
+            className="text-brass hover:underline"
+          >
+            Continue on WhatsApp →
+          </a>{" "}
+          or email{" "}
+          <a href={CONTACT.email.href} className="text-brass hover:underline">
+            {CONTACT.email.label}
           </a>
         </p>
       </div>

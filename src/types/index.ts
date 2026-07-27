@@ -8,9 +8,11 @@ export interface FooterColumn {
   links: NavLink[];
 }
 
-export interface SocialLink {
-  label: string;
-  href: string;
+export interface OrganizationContactPoint {
+  "@type": "ContactPoint";
+  telephone: string;
+  email: string;
+  contactType: string;
 }
 
 export interface OrganizationJsonLd {
@@ -19,12 +21,20 @@ export interface OrganizationJsonLd {
   name: string;
   url: string;
   description: string;
-  sameAs: string[];
+  telephone: string;
+  email: string;
+  contactPoint: OrganizationContactPoint;
 }
 
 export interface CtaLink {
   label: string;
   href: string;
+}
+
+export interface ContactInfo {
+  phone: CtaLink;
+  whatsapp: CtaLink;
+  email: CtaLink;
 }
 
 export interface Pillar {

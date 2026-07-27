@@ -15,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     { url: `${SITE.url}/privacy`, changeFrequency: "yearly", priority: 0.2 },
     { url: `${SITE.url}/terms`, changeFrequency: "yearly", priority: 0.2 },
-    { url: `${SITE.url}/disclosures`, changeFrequency: "yearly", priority: 0.2 },
+    { url: `${SITE.url}/disclaimer`, changeFrequency: "yearly", priority: 0.2 },
   ];
 
   const articleRoutes: MetadataRoute.Sitemap = getAllArticles().map((article) => ({

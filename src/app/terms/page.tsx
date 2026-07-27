@@ -21,10 +21,11 @@ export const metadata: Metadata = {
 export default function TermsPage() {
   return (
     <>
-      <LegalHero title="Terms of Engagement" />
+      <LegalHero title="Terms of Service" />
       <LegalBody>
         <p>
-          These Terms of Engagement govern the general relationship between{" "}
+          These Terms of Service govern use of this site and the general relationship
+          between{" "}
           {LEGAL_ENTITY_NAME} (&quot;Rise360&quot;) and anyone who engages us for advisory
           or structuring services. They sit alongside, not instead of, the specific
           engagement letter signed for each piece of work.
@@ -35,6 +36,14 @@ export default function TermsPage() {
           Rise360 provides advisory, structuring and coordination services across Capital,
           Mobility, Trade, Assets and Digital. Our role is to design the structure, sequence
           the work, and coordinate the licensed parties who carry it out.
+        </p>
+        <p>
+          This site and the content on it are informational. Nothing published here — an
+          insights article, a practice page, a service description — is legal, tax,
+          immigration or financial advice, and browsing it does not create any advisory
+          relationship. Advice specific to your situation is given only within a formal
+          engagement, or by the licensed professional handling the regulated part of your
+          structure.
         </p>
 
         <h2>What Rise360 Is Not</h2>

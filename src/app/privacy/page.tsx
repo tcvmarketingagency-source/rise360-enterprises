@@ -31,11 +31,10 @@ export default function PrivacyPage() {
 
         <h2>Information We Collect</h2>
         <p>
-          When you request a consultation or engage us for a service, we collect the
-          information you provide directly — typically your name, email, phone number, and
-          details about the business or move you&apos;re structuring. When you engage a
-          specific practice, we collect the additional documentation that practice
-          reasonably requires to do its work.
+          Our private consultation form asks for your name, email, phone number (optional),
+          the entity you represent (optional), and details about your objective, target
+          markets, timeline and scale. If you go on to engage a specific practice, we collect
+          the additional documentation that practice reasonably requires to do its work.
         </p>
         <p>
           When you browse the site, we collect standard analytics data — pages visited,
@@ -43,9 +42,17 @@ export default function PrivacyPage() {
           this data to individually identify visitors, and we don&apos;t sell it.
         </p>
 
+        <h2>How We Store It</h2>
+        <p>
+          Consultation submissions are stored in a database hosted on Supabase, accessed only
+          by Rise360. We don&apos;t publish, share, or sell this information for marketing
+          purposes — it exists so we can review your enquiry and respond to it, and, if an
+          engagement follows, to deliver that work.
+        </p>
+
         <h2>How We Use Your Information</h2>
         <ul>
-          <li>To respond to inquiries and scope a potential engagement</li>
+          <li>To review your consultation request and respond to it</li>
           <li>To deliver the services set out in a signed engagement letter</li>
           <li>To maintain records required for regulatory and tax compliance</li>
           <li>To improve the site and the accuracy of our published content</li>
